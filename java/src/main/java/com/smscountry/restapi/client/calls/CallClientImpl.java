@@ -151,7 +151,7 @@ public class CallClientImpl extends GenericClient implements CallClient {
 		return result;
 	}
 	
-	public CallResponse disconnectMultipleCall(final CallRequest request){
+	public CallResponse disconnectMultipleCalls(final CallRequest request){
 		final String url = getUrlProperties().getProperty("disconnect_all_calls_url");
 		
 		Entity<CallRequest> payload = Entity.json(request);

@@ -28,4 +28,8 @@ public interface CallClient {
 	public CallResponse getRecordingDetails(final String callUUID, final String recordingUUID);
 	
 	public CallResponse getAllRecordingDetails(final String callUUID);
+	
+	public CallResponse disconnectCall(final String callUUID);
+	
+	public CallResponse disconnectMultipleCalls(final CallRequest request);
 }
