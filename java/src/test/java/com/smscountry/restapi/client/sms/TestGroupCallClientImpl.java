@@ -24,7 +24,7 @@ public class TestGroupCallClientImpl {
 		final GroupCallClient client = SmsCountry.getInstance().getGroupCallClient("7nZIXc5752aUeST8WATv",
 				"UAbIyRUIdwB7wDzu6gdCAe4SwSXFbzDBL2fOBA4N");
 		
-		final GroupCallResponse response = client.getGroupCallDetails("1234");
+		final GroupCallResponse response = client.getGroupCallDetails("79cf387f-67e1-4045-8978-c6ee7477861b");
 		
 		System.out.println(response.getHttpStatusCode() + " " + response.getSuccess() + " " + response.getMessage());
 	}

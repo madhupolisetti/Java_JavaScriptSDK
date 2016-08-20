@@ -3,8 +3,8 @@
  */
 package com.smscountry.restapi.client.calls;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 /**
  * @author Sajeesh
@@ -41,6 +41,9 @@ public class CallResponse {
 	
 	@JsonProperty("AffectedCallUUIDs")
 	private String [] affectedCallUUIDs;
+	
+	@JsonProperty("GatewayId")
+	private String gatewayId;
 	
 	/**
 	 * @return the apiId

@@ -10,6 +10,8 @@ import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import org.glassfish.jersey.client.HttpUrlConnectorProvider;
+
 import com.smscountry.restapi.client.GenericClient;
 import com.smscountry.restapi.client.groups.GroupRequest;
 import com.smscountry.restapi.client.groups.GroupResponse;
@@ -108,7 +110,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse muteParticipants(String groupCallUUID) {
 		final String url = getUrlProperties().getProperty("mute_all_participant_url");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);
@@ -120,7 +124,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse muteParticipant(String groupCallUUID, String participantId) {
 		final String url = getUrlProperties().getProperty("mute_participant_url");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID, participantId))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID, participantId))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);
@@ -132,7 +138,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse unmuteParticipants(String groupCallUUID) {
 		final String url = getUrlProperties().getProperty("unmute_all_participant_url");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);
@@ -144,7 +152,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse unmuteParticipant(String groupCallUUID, String participantId) {
 		final String url = getUrlProperties().getProperty("unmute_participant_url");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID, participantId))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID, participantId))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);
@@ -169,7 +179,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse stopRecording(String groupCallUUID, String recordingUUID) {
 		final String url = getUrlProperties().getProperty("stop_recording_group_call");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID, recordingUUID))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID, recordingUUID))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);
@@ -181,7 +193,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse stopAllRecordings(String groupCallUUID) {
 		final String url = getUrlProperties().getProperty("stop_all_recordings_group_call");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);
@@ -237,7 +251,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse disconnectAllParticipants(String groupCallUUID) {
 		final String url = getUrlProperties().getProperty("disconnect_all_participants");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);
@@ -249,7 +265,9 @@ public class GroupCallClientImpl extends GenericClient implements GroupCallClien
 	public GroupCallResponse disconnectParticipant(String groupCallUUID, String participantId) {
 		final String url = getUrlProperties().getProperty("disconnect_participant");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupCallUUID, participantId))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupCallUUID, participantId))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH");
 		final GroupCallResponse result = response.readEntity(GroupCallResponse.class);

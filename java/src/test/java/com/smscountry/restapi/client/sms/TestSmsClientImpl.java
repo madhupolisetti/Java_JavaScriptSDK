@@ -17,14 +17,14 @@ public class TestSmsClientImpl {
 		smsRequest.setDrNotifyUrl("https://www.domainname.com/notifyurl");
 		smsRequest.setDrNotifyHttpMethod("Post");
 		SmsResponse  response = client.sendSMS(smsRequest);
-		System.out.println(response.getSuccess() + " " + response.getMessage());
+		System.out.println(response.getSuccess() + " " + response.getMessage() + " " + response.getMessageUUID());
 	}
 	
 	@Test
 	public void testGetSmsDetails(){
 		SmsClient client = SmsCountry.getInstance().getSmsClient("7nZIXc5752aUeST8WATv", "UAbIyRUIdwB7wDzu6gdCAe4SwSXFbzDBL2fOBA4N");
 		
-		SmsResponse response = client.getSMSDetails("4236749c-0d5c-4b1e-9598-3260e688d616");
+		SmsResponse response = client.getSMSDetails("b7029ecd-1c09-4c85-bab6-a54d8810cf05");
 		System.out.println(response.getSuccess() + " " + response.getMessage());
 
 	}

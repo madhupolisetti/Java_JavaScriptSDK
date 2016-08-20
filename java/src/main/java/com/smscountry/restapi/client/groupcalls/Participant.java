@@ -3,7 +3,7 @@
  */
 package com.smscountry.restapi.client.groupcalls;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Sajeesh

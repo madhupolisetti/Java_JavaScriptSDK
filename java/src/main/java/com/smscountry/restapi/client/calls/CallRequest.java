@@ -3,7 +3,7 @@
  */
 package com.smscountry.restapi.client.calls;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Sajeesh
@@ -15,7 +15,7 @@ public class CallRequest {
 	private String number;
 
 	@JsonProperty("Numbers")
-	private String [] numbers;
+	private String[] numbers;
 
 	@JsonProperty("CallerId")
 	private String senderId;
@@ -25,31 +25,30 @@ public class CallRequest {
 
 	@JsonProperty("AnswerUrl")
 	private String answerUrl;
-	
+
 	@JsonProperty("HangupUrl")
 	private String hangupUrl;
-	
+
 	@JsonProperty("HttpMethod")
 	private String HttpMethod;
-	
+
 	@JsonProperty("Sounds")
-	private String [] sounds;
-	
-	@JsonProperty("Leg")
+	private String[] sounds;
+
+	@JsonProperty("Legs")
 	private String leg;
-	
+
 	@JsonProperty("Length")
-	private String length;
-	
+	private int length;
+
 	@JsonProperty("FileFormat")
 	private String fileFormat;
-	
+
 	@JsonProperty("TimeLimit")
 	private int timeLimit;
-	
+
 	@JsonProperty("CallUUIDs")
-	private String [] callUUIDs;
-	
+	private String[] callUUIDs;
 
 	/**
 	 * @return the number
@@ -59,7 +58,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param number the number to set
+	 * @param number
+	 *            the number to set
 	 */
 	public void setNumber(String number) {
 		this.number = number;
@@ -73,7 +73,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param senderId the senderId to set
+	 * @param senderId
+	 *            the senderId to set
 	 */
 	public void setSenderId(String senderId) {
 		this.senderId = senderId;
@@ -87,7 +88,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param ringUrl the ringUrl to set
+	 * @param ringUrl
+	 *            the ringUrl to set
 	 */
 	public void setRingUrl(String ringUrl) {
 		this.ringUrl = ringUrl;
@@ -101,7 +103,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param answerUrl the answerUrl to set
+	 * @param answerUrl
+	 *            the answerUrl to set
 	 */
 	public void setAnswerUrl(String answerUrl) {
 		this.answerUrl = answerUrl;
@@ -115,7 +118,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param hangupUrl the hangupUrl to set
+	 * @param hangupUrl
+	 *            the hangupUrl to set
 	 */
 	public void setHangupUrl(String hangupUrl) {
 		this.hangupUrl = hangupUrl;
@@ -129,7 +133,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param httpMethod the httpMethod to set
+	 * @param httpMethod
+	 *            the httpMethod to set
 	 */
 	public void setHttpMethod(String httpMethod) {
 		HttpMethod = httpMethod;
@@ -143,7 +148,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param numbers the numbers to set
+	 * @param numbers
+	 *            the numbers to set
 	 */
 	public void setNumbers(String[] numbers) {
 		this.numbers = numbers;
@@ -157,7 +163,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param sounds the sounds to set
+	 * @param sounds
+	 *            the sounds to set
 	 */
 	public void setSounds(String[] sounds) {
 		this.sounds = sounds;
@@ -171,7 +178,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param leg the leg to set
+	 * @param leg
+	 *            the leg to set
 	 */
 	public void setLeg(String leg) {
 		this.leg = leg;
@@ -180,14 +188,15 @@ public class CallRequest {
 	/**
 	 * @return the length
 	 */
-	public String getLength() {
+	public int getLength() {
 		return length;
 	}
 
 	/**
-	 * @param length the length to set
+	 * @param length
+	 *            the length to set
 	 */
-	public void setLength(String length) {
+	public void setLength(int length) {
 		this.length = length;
 	}
 
@@ -199,7 +208,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param fileFormat the fileFormat to set
+	 * @param fileFormat
+	 *            the fileFormat to set
 	 */
 	public void setFileFormat(String fileFormat) {
 		this.fileFormat = fileFormat;
@@ -213,7 +223,8 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param timeLimit the timeLimit to set
+	 * @param timeLimit
+	 *            the timeLimit to set
 	 */
 	public void setTimeLimit(int timeLimit) {
 		this.timeLimit = timeLimit;
@@ -227,10 +238,11 @@ public class CallRequest {
 	}
 
 	/**
-	 * @param callUUIDs the callUUIDs to set
+	 * @param callUUIDs
+	 *            the callUUIDs to set
 	 */
 	public void setCallUUIDs(String[] callUUIDs) {
 		this.callUUIDs = callUUIDs;
 	}
-	
+
 }

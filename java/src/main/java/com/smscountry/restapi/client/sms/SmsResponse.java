@@ -3,8 +3,8 @@
  */
 package com.smscountry.restapi.client.sms;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
  * @author Sajeesh
@@ -14,7 +14,7 @@ public class SmsResponse {
 
 	@JsonIgnore
 	private int httpCallCode;
-
+	
 	@JsonProperty("ApiId")
 	private String apiId;
 
@@ -37,7 +37,7 @@ public class SmsResponse {
 	private String batchId;
 
 	@JsonProperty("MessageUUIDs")
-	private String messageUUIDs;
+	private String [] messageUUIDs;
 
 	/**
 	 * @return the batchId
@@ -113,17 +113,19 @@ public class SmsResponse {
 		this.messageUUID = messageUUID;
 	}
 
+	
+
 	/**
 	 * @return the messageUUIDs
 	 */
-	public String getMessageUUIDs() {
+	public String[] getMessageUUIDs() {
 		return messageUUIDs;
 	}
 
 	/**
 	 * @param messageUUIDs the messageUUIDs to set
 	 */
-	public void setMessageUUIDs(String messageUUIDs) {
+	public void setMessageUUIDs(String[] messageUUIDs) {
 		this.messageUUIDs = messageUUIDs;
 	}
 

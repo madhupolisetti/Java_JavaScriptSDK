@@ -6,9 +6,12 @@ package com.smscountry.restapi.client.groups;
 import java.text.MessageFormat;
 import java.util.Properties;
 
+import javax.ws.rs.client.Client;
 import javax.ws.rs.client.Entity;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import org.glassfish.jersey.client.HttpUrlConnectorProvider;
 
 import com.smscountry.restapi.client.GenericClient;
 import com.smscountry.restapi.client.calls.CallResponse;;
@@ -66,7 +69,10 @@ public class GroupClientImpl extends GenericClient implements GroupClient {
 		final String url = getUrlProperties().getProperty("update_group_url");
 
 		Entity<GroupRequest> payload = Entity.json(request);
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupId))
+			
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupId))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH", payload);
 		final GroupResponse result = response.readEntity(GroupResponse.class);
@@ -113,7 +119,9 @@ public class GroupClientImpl extends GenericClient implements GroupClient {
 		final String url = getUrlProperties().getProperty("update_member_details_url");
 
 		Entity<Member> payload = Entity.json(member);
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), groupId, memberId))
+		Response response = getClient()
+				.property(HttpUrlConnectorProvider.SET_METHOD_WORKAROUND, true)
+				.target(MessageFormat.format(url, getApiKey(), groupId, memberId))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())
 				.method("PATCH", payload);
 		final GroupResponse result = response.readEntity(GroupResponse.class);
