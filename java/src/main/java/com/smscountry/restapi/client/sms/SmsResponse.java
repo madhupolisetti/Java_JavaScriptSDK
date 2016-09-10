@@ -14,7 +14,7 @@ public class SmsResponse {
 
 	@JsonIgnore
 	private int httpCallCode;
-	
+
 	@JsonProperty("ApiId")
 	private String apiId;
 
@@ -37,7 +37,10 @@ public class SmsResponse {
 	private String batchId;
 
 	@JsonProperty("MessageUUIDs")
-	private String [] messageUUIDs;
+	private String[] messageUUIDs;
+
+	@JsonProperty("Next")
+	private String next;
 
 	/**
 	 * @return the batchId
@@ -107,13 +110,12 @@ public class SmsResponse {
 	}
 
 	/**
-	 * @param messageUUID the messageUUID to set
+	 * @param messageUUID
+	 *            the messageUUID to set
 	 */
 	public void setMessageUUID(String messageUUID) {
 		this.messageUUID = messageUUID;
 	}
-
-	
 
 	/**
 	 * @return the messageUUIDs
@@ -123,7 +125,8 @@ public class SmsResponse {
 	}
 
 	/**
-	 * @param messageUUIDs the messageUUIDs to set
+	 * @param messageUUIDs
+	 *            the messageUUIDs to set
 	 */
 	public void setMessageUUIDs(String[] messageUUIDs) {
 		this.messageUUIDs = messageUUIDs;
@@ -172,6 +175,21 @@ public class SmsResponse {
 	 */
 	public void setHttpCallCode(int httpCallCode) {
 		this.httpCallCode = httpCallCode;
+	}
+
+	/**
+	 * @return the next
+	 */
+	public String getNext() {
+		return next;
+	}
+
+	/**
+	 * @param next
+	 *            the next to set
+	 */
+	public void setNext(String next) {
+		this.next = next;
 	}
 
 }

@@ -24,7 +24,7 @@ public class TestSmsClientImpl {
 	public void testGetSmsDetails(){
 		SmsClient client = SmsCountry.getInstance().getSmsClient("7nZIXc5752aUeST8WATv", "UAbIyRUIdwB7wDzu6gdCAe4SwSXFbzDBL2fOBA4N");
 		
-		SmsResponse response = client.getSMSDetails("b7029ecd-1c09-4c85-bab6-a54d8810cf05");
+		SmsResponse response = client.getSMSDetails("4236749c-0d5c-4b1e-9598-3260e688d616(f47af57a-a6b1-471a-a764-2a4df387a8e0)");
 		System.out.println(response.getSuccess() + " " + response.getMessage());
 
 	}
@@ -33,7 +33,7 @@ public class TestSmsClientImpl {
 	public void testGetSmsCollection(){
 		SmsClient client = SmsCountry.getInstance().getSmsClient("7nZIXc5752aUeST8WATv", "UAbIyRUIdwB7wDzu6gdCAe4SwSXFbzDBL2fOBA4N");
 		
-		SmsResponse response = client.getSMSCollection("", "", "SmsCountry");
+		SmsResponse response = client.getSMSCollection("", "", "SmsCountry","0", "");
 		System.out.println(response.getSuccess() + " " + response.getMessage());
 
 	}

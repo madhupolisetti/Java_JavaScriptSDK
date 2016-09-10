@@ -13,35 +13,47 @@ public class Call {
 
 	@JsonProperty("CallUUID")
 	private String callUUID;
-	
+
 	@JsonProperty("Number")
 	private String number;
-	
+
 	@JsonProperty("RingTime")
 	private String ringTime;
-	
+
 	@JsonProperty("AnswerTime")
 	private String answerTime;
-	
+
 	@JsonProperty("EndTime")
 	private String endTime;
-	
+
 	@JsonProperty("EndReason")
 	private String endReason;
-	
+
 	@JsonProperty("Status")
 	private String status;
-	
+
 	@JsonProperty("Cost")
 	private String cost;
-	
+
 	@JsonProperty("Currency")
 	private String currency;
+
+	@JsonProperty("Direction")
+	private String direction;
+
+	@JsonProperty("Pulse")
+	private String pulse;
+
+	@JsonProperty("Pulses")
+	private String pulses;
+
+	@JsonProperty("PricePerPulse")
+	private String pricePerPulse;
 
 	/**
 	 * @return the number
 	 */
-	
+
 	protected String getNumber() {
 		return number;
 	}
@@ -62,7 +74,8 @@ public class Call {
 	}
 
 	/**
-	 * @param status the status to set
+	 * @param status
+	 *            the status to set
 	 */
 	public void setStatus(String status) {
 		this.status = status;
@@ -76,7 +89,8 @@ public class Call {
 	}
 
 	/**
-	 * @param cost the cost to set
+	 * @param cost
+	 *            the cost to set
 	 */
 	public void setCost(String cost) {
 		this.cost = cost;
@@ -85,7 +99,7 @@ public class Call {
 	/**
 	 * @return the currency
 	 */
-	
+
 	protected String getCurrency() {
 		return currency;
 	}
@@ -106,7 +120,8 @@ public class Call {
 	}
 
 	/**
-	 * @param callUUID the callUUID to set
+	 * @param callUUID
+	 *            the callUUID to set
 	 */
 	public void setCallUUID(String callUUID) {
 		this.callUUID = callUUID;
@@ -120,7 +135,8 @@ public class Call {
 	}
 
 	/**
-	 * @param ringTime the ringTime to set
+	 * @param ringTime
+	 *            the ringTime to set
 	 */
 	public void setRingTime(String ringTime) {
 		this.ringTime = ringTime;
@@ -134,7 +150,8 @@ public class Call {
 	}
 
 	/**
-	 * @param answerTime the answerTime to set
+	 * @param answerTime
+	 *            the answerTime to set
 	 */
 	public void setAnswerTime(String answerTime) {
 		this.answerTime = answerTime;
@@ -148,7 +165,8 @@ public class Call {
 	}
 
 	/**
-	 * @param endTime the endTime to set
+	 * @param endTime
+	 *            the endTime to set
 	 */
 	public void setEndTime(String endTime) {
 		this.endTime = endTime;
@@ -162,10 +180,71 @@ public class Call {
 	}
 
 	/**
-	 * @param endReason the endReason to set
+	 * @param endReason
+	 *            the endReason to set
 	 */
 	public void setEndReason(String endReason) {
 		this.endReason = endReason;
 	}
-	
+
+	/**
+	 * @return the direction
+	 */
+	public String getDirection() {
+		return direction;
+	}
+
+	/**
+	 * @param direction
+	 *            the direction to set
+	 */
+	public void setDirection(String direction) {
+		this.direction = direction;
+	}
+
+	/**
+	 * @return the pulse
+	 */
+	public String getPulse() {
+		return pulse;
+	}
+
+	/**
+	 * @param pulse
+	 *            the pulse to set
+	 */
+	public void setPulse(String pulse) {
+		this.pulse = pulse;
+	}
+
+	/**
+	 * @return the pulses
+	 */
+	public String getPulses() {
+		return pulses;
+	}
+
+	/**
+	 * @param pulses
+	 *            the pulses to set
+	 */
+	public void setPulses(String pulses) {
+		this.pulses = pulses;
+	}
+
+	/**
+	 * @return the pricePerPulse
+	 */
+	public String getPricePerPulse() {
+		return pricePerPulse;
+	}
+
+	/**
+	 * @param pricePerPulse
+	 *            the pricePerPulse to set
+	 */
+	public void setPricePerPulse(String pricePerPulse) {
+		this.pricePerPulse = pricePerPulse;
+	}
+
 }

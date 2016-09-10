@@ -13,29 +13,38 @@ public class SMS {
 
 	@JsonProperty("MessageUUID")
 	private String messageUUID;
-	
+
 	@JsonProperty("Number")
 	private String number;
-	
+
 	@JsonProperty("Text")
 	private String text;
-	
+
 	@JsonProperty("DoneTime")
 	private String doneTime;
-	
+
 	@JsonProperty("Status")
 	private String status;
-	
+
 	@JsonProperty("Cost")
 	private String cost;
-	
+
 	@JsonProperty("Currency")
 	private String currency;
+
+	@JsonProperty("Tool")
+	private String tool;
+
+	@JsonProperty("SenderId")
+	private String senderId;
+
+	@JsonProperty("StatusTime")
+	private String statusTime;
 
 	/**
 	 * @return the messageUUID
 	 */
-	
+
 	protected String getMessageUUID() {
 		return messageUUID;
 	}
@@ -51,7 +60,7 @@ public class SMS {
 	/**
 	 * @return the number
 	 */
-	
+
 	protected String getNumber() {
 		return number;
 	}
@@ -118,7 +127,8 @@ public class SMS {
 	}
 
 	/**
-	 * @param cost the cost to set
+	 * @param cost
+	 *            the cost to set
 	 */
 	public void setCost(String cost) {
 		this.cost = cost;
@@ -137,6 +147,51 @@ public class SMS {
 	 */
 	protected void setCurrency(String currency) {
 		this.currency = currency;
+	}
+
+	/**
+	 * @return the tool
+	 */
+	public String getTool() {
+		return tool;
+	}
+
+	/**
+	 * @param tool
+	 *            the tool to set
+	 */
+	public void setTool(String tool) {
+		this.tool = tool;
+	}
+
+	/**
+	 * @return the senderId
+	 */
+	public String getSenderId() {
+		return senderId;
+	}
+
+	/**
+	 * @param senderId
+	 *            the senderId to set
+	 */
+	public void setSenderId(String senderId) {
+		this.senderId = senderId;
+	}
+
+	/**
+	 * @return the statusTime
+	 */
+	public String getStatusTime() {
+		return statusTime;
+	}
+
+	/**
+	 * @param statusTime
+	 *            the statusTime to set
+	 */
+	public void setStatusTime(String statusTime) {
+		this.statusTime = statusTime;
 	}
 
 }

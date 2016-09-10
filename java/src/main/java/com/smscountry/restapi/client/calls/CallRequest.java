@@ -50,6 +50,9 @@ public class CallRequest {
 	@JsonProperty("CallUUIDs")
 	private String[] callUUIDs;
 
+	@JsonProperty("Xml")
+	private String xml;
+
 	/**
 	 * @return the number
 	 */
@@ -243,6 +246,21 @@ public class CallRequest {
 	 */
 	public void setCallUUIDs(String[] callUUIDs) {
 		this.callUUIDs = callUUIDs;
+	}
+
+	/**
+	 * @return the xml
+	 */
+	public String getXml() {
+		return xml;
+	}
+
+	/**
+	 * @param xml
+	 *            the xml to set
+	 */
+	public void setXml(String xml) {
+		this.xml = xml;
 	}
 
 }

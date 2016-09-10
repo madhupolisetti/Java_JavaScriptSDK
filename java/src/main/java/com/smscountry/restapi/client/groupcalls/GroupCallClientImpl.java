@@ -13,8 +13,7 @@ import javax.ws.rs.core.Response;
 import org.glassfish.jersey.client.HttpUrlConnectorProvider;
 
 import com.smscountry.restapi.client.GenericClient;
-import com.smscountry.restapi.client.groups.GroupRequest;
-import com.smscountry.restapi.client.groups.GroupResponse;
+
 
 /**
  * @author Sajeesh

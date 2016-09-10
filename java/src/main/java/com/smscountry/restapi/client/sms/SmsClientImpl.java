@@ -45,10 +45,12 @@ public class SmsClientImpl extends GenericClient implements SmsClient {
 	}
 
 	@Override
-	public SmsResponse getSMSCollection(final String fromDate, final String toDate, final String senderId) {
+	public SmsResponse getSMSCollection(final String fromDate, final String toDate, final String senderId,
+			final String offset, final String limit) {
 		final String url = getUrlProperties().getProperty("get_sms_collections_url");
 
-		Response response = getClient().target(MessageFormat.format(url, getApiKey(), fromDate, toDate, senderId))
+		Response response = getClient()
+				.target(MessageFormat.format(url, getApiKey(), fromDate, toDate, senderId, offset, limit))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization()).get();
 		final SmsResponse result = response.readEntity(SmsResponse.class);
 		result.setHttpCallCode(response.getStatus());
@@ -58,7 +60,7 @@ public class SmsClientImpl extends GenericClient implements SmsClient {
 	@Override
 	public SmsResponse sendBulkSMS(final SmsRequest request) {
 		final String url = getUrlProperties().getProperty("send_bulk_sms_url");
-		
+
 		Entity<SmsRequest> payload = Entity.json(request);
 		Response response = getClient().target(MessageFormat.format(url, getApiKey()))
 				.request(MediaType.APPLICATION_JSON_TYPE).header("Authorization", "Basic " + getAuthorization())

@@ -14,7 +14,7 @@ public class CallResponse {
 
 	@JsonIgnore
 	private int httpStatusCode;
-	
+
 	@JsonProperty("ApiId")
 	private String apiId;
 
@@ -26,25 +26,28 @@ public class CallResponse {
 
 	@JsonProperty("CallUUID")
 	private String callUUID;
-	
+
 	@JsonProperty("CallUUIDs")
-	private String [] callUUIDs;
-	
-	@JsonProperty("Call")
-	private Call [] calls;
-	
+	private String[] callUUIDs;
+
+	@JsonProperty("Calls")
+	private Call[] calls;
+
 	@JsonProperty("Recording")
 	private Recording recording;
-	
+
 	@JsonProperty("Recordings")
-	private Recording [] recordings;
-	
+	private Recording[] recordings;
+
 	@JsonProperty("AffectedCallUUIDs")
-	private String [] affectedCallUUIDs;
-	
+	private String[] affectedCallUUIDs;
+
 	@JsonProperty("GatewayId")
 	private String gatewayId;
-	
+
+	@JsonProperty("Next")
+	private String next;
+
 	/**
 	 * @return the apiId
 	 */
@@ -60,7 +63,6 @@ public class CallResponse {
 		this.apiId = apiId;
 	}
 
-
 	/**
 	 * @return the success
 	 */
@@ -69,7 +71,8 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param success the success to set
+	 * @param success
+	 *            the success to set
 	 */
 	public void setSuccess(String success) {
 		this.success = success;
@@ -98,7 +101,8 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param callUUID the callUUID to set
+	 * @param callUUID
+	 *            the callUUID to set
 	 */
 	public void setCallUUID(String callUUID) {
 		this.callUUID = callUUID;
@@ -112,7 +116,8 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param callUUIDs the callUUIDs to set
+	 * @param callUUIDs
+	 *            the callUUIDs to set
 	 */
 	public void setCallUUIDs(String[] callUUIDs) {
 		this.callUUIDs = callUUIDs;
@@ -126,7 +131,8 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param calls the calls to set
+	 * @param calls
+	 *            the calls to set
 	 */
 	public void setCalls(Call[] calls) {
 		this.calls = calls;
@@ -140,7 +146,8 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param httpStatusCode the httpStatusCode to set
+	 * @param httpStatusCode
+	 *            the httpStatusCode to set
 	 */
 	public void setHttpStatusCode(int httpStatusCode) {
 		this.httpStatusCode = httpStatusCode;
@@ -154,7 +161,8 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param recording the recording to set
+	 * @param recording
+	 *            the recording to set
 	 */
 	public void setRecording(Recording recording) {
 		this.recording = recording;
@@ -168,7 +176,8 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param recordings the recordings to set
+	 * @param recordings
+	 *            the recordings to set
 	 */
 	public void setRecordings(Recording[] recordings) {
 		this.recordings = recordings;
@@ -182,10 +191,41 @@ public class CallResponse {
 	}
 
 	/**
-	 * @param affectedCallUUIDs the affectedCallUUIDs to set
+	 * @param affectedCallUUIDs
+	 *            the affectedCallUUIDs to set
 	 */
 	public void setAffectedCallUUIDs(String[] affectedCallUUIDs) {
 		this.affectedCallUUIDs = affectedCallUUIDs;
 	}
-	
+
+	/**
+	 * @return the gatewayId
+	 */
+	public String getGatewayId() {
+		return gatewayId;
+	}
+
+	/**
+	 * @param gatewayId
+	 *            the gatewayId to set
+	 */
+	public void setGatewayId(String gatewayId) {
+		this.gatewayId = gatewayId;
+	}
+
+	/**
+	 * @return the next
+	 */
+	public String getNext() {
+		return next;
+	}
+
+	/**
+	 * @param next
+	 *            the next to set
+	 */
+	public void setNext(String next) {
+		this.next = next;
+	}
+
 }
