@@ -50,6 +50,12 @@ public class Call {
 	@JsonProperty("PricePerPulse")
 	private String pricePerPulse;
 
+	@JsonProperty("CallerId")
+	private String callerId;
+
+	@JsonProperty("ToolName")
+	private String toolName;
+
 	/**
 	 * @return the number
 	 */
@@ -245,6 +251,36 @@ public class Call {
 	 */
 	public void setPricePerPulse(String pricePerPulse) {
 		this.pricePerPulse = pricePerPulse;
+	}
+
+	/**
+	 * @return the callerId
+	 */
+	public String getCallerId() {
+		return callerId;
+	}
+
+	/**
+	 * @param callerId
+	 *            the callerId to set
+	 */
+	public void setCallerId(String callerId) {
+		this.callerId = callerId;
+	}
+
+	/**
+	 * @return the toolName
+	 */
+	public String getToolName() {
+		return toolName;
+	}
+
+	/**
+	 * @param toolName
+	 *            the toolName to set
+	 */
+	public void setToolName(String toolName) {
+		this.toolName = toolName;
 	}
 
 }

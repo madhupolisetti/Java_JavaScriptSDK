@@ -30,6 +30,9 @@ public class CallResponse {
 	@JsonProperty("CallUUIDs")
 	private String[] callUUIDs;
 
+	@JsonProperty("Call")
+	private Call call;
+
 	@JsonProperty("Calls")
 	private Call[] calls;
 
@@ -226,6 +229,21 @@ public class CallResponse {
 	 */
 	public void setNext(String next) {
 		this.next = next;
+	}
+
+	/**
+	 * @return the call
+	 */
+	public Call getCall() {
+		return call;
+	}
+
+	/**
+	 * @param call
+	 *            the call to set
+	 */
+	public void setCall(Call call) {
+		this.call = call;
 	}
 
 }
